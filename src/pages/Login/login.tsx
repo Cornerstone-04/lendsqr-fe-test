@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./login.scss";
 import { useNavigate } from "react-router";
 import loginIllustration from "../../assets/images/login-illustration.png";
-import { LendsqrLogo } from "../../assets/icons/lendsqr-logo";
+import LendsqrLogo from "../../assets/icons/lendsqr-logo.svg";
 import { isAuthenticated } from "../../utils/auth";
 
 export const Login = () => {
@@ -65,7 +65,7 @@ export const Login = () => {
     <main className="login-page">
       <section className="login-left">
         <div className="login-logo">
-          <LendsqrLogo />
+          <img src={LendsqrLogo} alt="Lendsqr Logo" />
         </div>
         <div className="login-illustration">
           <img src={loginIllustration} alt="Lendsqr Login Illustration" />

@@ -1,6 +1,6 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 
-import { Dashboard, Login, UserDetails, Users } from "../pages";
+import { Login, UserDetails, Users } from "../pages";
 import { PageLayout } from "../components/layout";
 import ProtectedRoute from "./ProtectedRoutes";
 import NotFound from "../pages/NotFound/not-found";
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Dashboard />,
+            element: <Navigate to="/users" replace />,
           },
           {
             path: "users",
