@@ -1,0 +1,98 @@
+// Lendsqr Design System Variables
+
+// Primary Colors
+$primary-teal: #39cdcc;
+$primary-teal-light: rgba(57, 205, 204, 0.06);
+$primary-navy: #213f7d;
+
+// Text Colors
+$text-primary: #213f7d;
+$text-secondary: #545f7d;
+$text-muted: #545f7d;
+
+// Background Colors
+$bg-white: #ffffff;
+$bg-light: #fbfbfb;
+$bg-sidebar: #ffffff;
+
+// Border Colors
+$border-color: rgba(33, 63, 125, 0.06);
+$border-light: rgba(84, 95, 125, 0.2);
+
+// Status Colors
+$status-active: #39cd62;
+$status-active-bg: rgba(57, 205, 98, 0.06);
+$status-inactive: #545f7d;
+$status-inactive-bg: rgba(84, 95, 125, 0.06);
+$status-pending: #e9b200;
+$status-pending-bg: rgba(233, 178, 0, 0.1);
+$status-blacklisted: #e4033b;
+$status-blacklisted-bg: rgba(228, 3, 59, 0.1);
+
+// Icon Colors
+$icon-pink: #df18ff;
+$icon-purple: #5718ff;
+$icon-orange: #f55f44;
+$icon-red: #ff3366;
+
+// Icon Background Colors
+$icon-pink-bg: rgba(223, 24, 255, 0.1);
+$icon-purple-bg: rgba(87, 24, 255, 0.1);
+$icon-orange-bg: rgba(245, 95, 68, 0.1);
+$icon-red-bg: rgba(255, 51, 102, 0.1);
+
+// Shadows
+
+$shadow-sm: 3px 5px 20px rgba(0, 0, 0, 0.04);
+$shadow-md: 0px 4px 30px rgba(0, 0, 0, 0.05);
+$shadow-lg: 0px 10px 20px rgba(0, 0, 0, 0.04);
+$shadow-dropdown: 3px 5px 20px rgba(0, 0, 0, 0.04);
+$shadow-login: 0px 15px 90px 0px #00000008;
+
+// Border Radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 10px;
+
+// Spacing
+$sidebar-width: 283px;
+$sidebar-collapsed-width: 60px;
+$header-height: 100px;
+
+// Font Family
+$font-primary: "Avenir", sans-serif;
+$font-secondary: "Works Sans", sans-serif;
+
+// Font Sizes
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-2xl: 40px;
+
+// Font Weights
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+// Line Heights
+$line-height-tight: 1.2;
+$line-height-base: 1.4;
+$line-height-relaxed: 1.6;
+$line-height-full: 100%;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1440px;
+
+// Z-index
+$z-dropdown: 100;
+$z-sidebar: 200;
+$z-header: 300;
+$z-modal: 400;
+$z-tooltip: 500;
