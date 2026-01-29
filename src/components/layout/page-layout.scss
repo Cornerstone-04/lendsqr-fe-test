@@ -2,27 +2,40 @@
 @use "../../styles/mixins" as *;
 @use "sass:color";
 
-.dashboard-layout {
+.page-layout {
     display: flex;
     min-height: 100vh;
     background-color: $bg-light;
 }
 
-.dashboard-layout__content {
+.page-layout__content {
     flex: 1;
     margin-left: $sidebar-width;
-    margin-top: $header-height;
+    margin-top: $header-height; 
     padding: 60px;
     min-height: calc(100vh - $header-height);
+    transition: margin-left 0.3s ease;
+
+    &--sidebar-collapsed {
+        margin-left: $sidebar-collapsed-width;
+    }
 
     @include tablet {
         margin-left: $sidebar-width;
         padding: 40px 30px;
+
+        &--sidebar-collapsed {
+            margin-left: $sidebar-collapsed-width;
+        }
     }
 
     @include mobile {
         margin-left: 0;
         margin-top: 80px;
         padding: 24px 16px;
+
+        &--sidebar-collapsed {
+            margin-left: 0;
+        }
     }
 }

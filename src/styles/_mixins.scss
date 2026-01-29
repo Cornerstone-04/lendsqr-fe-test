@@ -3,7 +3,7 @@
 
 // Breakpoint mixins
 @mixin mobile {
-    Ï @media (max-width: #{$breakpoint-md - 1px}) {
+    @media (max-width: #{$breakpoint-md - 1px}) {
         @content;
     }
 }

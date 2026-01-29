@@ -6,12 +6,14 @@ import "./page-layout.scss";
 
 export const PageLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  
   return (
-    <div className="dashboard-layout" data-testid="dashboard-layout">
+    <div className="page-layout" data-testid="page-layout">
       <Header onMenuToggle={() => setSidebarOpen((prev) => !prev)} />
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} isCollapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed((prev) => !prev)} />
 
-      <main className="dashboard-layout__content">
+      <main className={`page-layout__content ${sidebarCollapsed ? "page-layout__content--sidebar-collapsed" : ""}`}>
         <Outlet />
       </main>
     </div>

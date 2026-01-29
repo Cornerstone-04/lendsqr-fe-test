@@ -19,6 +19,7 @@ import {
   BadgeDollarSign,
   ClipboardList,
   ChevronDown,
+  ChevronLeft,
   LogOut,
   MessagesSquare,
   FileChartColumnIncreasing,
@@ -28,9 +29,16 @@ import "./sidebar.scss";
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  isCollapsed: boolean;
+  onToggleCollapse: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+export const Sidebar: React.FC<SidebarProps> = ({
+  isOpen,
+  onClose,
+  isCollapsed,
+  onToggleCollapse,
+}) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -126,6 +134,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           >
             <item.icon />
             <span>{item.label}</span>
+            {isCollapsed && (
+              <span className="sidebar__nav-tooltip">{item.label}</span>
+            )}
           </NavLink>
         </li>
       ))}
@@ -136,9 +147,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     <>
       {isOpen && <div className="sidebar__overlay" onClick={onClose} />}
       <aside
-        className={`sidebar ${isOpen ? "sidebar--open" : ""}`}
+        className={`sidebar ${isOpen ? "sidebar--open" : ""} ${isCollapsed ? "sidebar--collapsed" : ""}`}
         data-testid="sidebar"
       >
+        <button
+          className="sidebar__toggle"
+          onClick={onToggleCollapse}
+          aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
+          <ChevronLeft />
+        </button>
+
         <div className="sidebar__switch-org">
           <Briefcase size={16} />
           <span>Switch Organization</span>
@@ -156,6 +175,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           >
             <Home size={16} />
             <span>Dashboard</span>
+            {isCollapsed && (
+              <span className="sidebar__nav-tooltip">Dashboard</span>
+            )}
           </NavLink>
         </nav>
 
@@ -178,6 +200,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           <button className="sidebar__nav-link" onClick={handleLogout}>
             <LogOut size={16} />
             <span>Logout</span>
+            {isCollapsed && (
+              <span className="sidebar__nav-tooltip">Logout</span>
+            )}
           </button>
         </div>
 
