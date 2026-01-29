@@ -1,179 +1,180 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "sass:color";
 
 .login-page {
-  display: flex;
-  min-height: 100vh;
-  background-color: $bg-white;
+    display: flex;
+    min-height: 100vh;
+    background-color: $bg-white;
 
-  @include mobile {
-    flex-direction: column;
-  }
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
 .login-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 40px 60px;
-  background-color: $bg-white;
-  max-width: 50%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    background-color: $bg-white;
+    max-width: 50%;
 
-  @include mobile {
-    display: none;
-  }
+    @include mobile {
+        display: none;
+    }
 
-  @include tablet {
-    padding: 40px;
-  }
+    @include tablet {
+        padding: 40px;
+    }
 }
 
 .login-logo {
-  position: absolute;
-  left: 97px;
-  top: 106px;
-  //   margin-bottom: 139px;
+    position: absolute;
+    left: 97px;
+    top: 106px;
+    //   margin-bottom: 139px;
 
-  @include mobile {
-    margin-bottom: 40px;
-  }
+    @include mobile {
+        margin-bottom: 40px;
+    }
 
-  img {
-    height: 36px;
-    width: auto;
-  }
+    img {
+        height: 36px;
+        width: auto;
+    }
 }
 
 .login-illustration {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 600px;
-  margin: 0 auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
 
-  img {
-    margin-top: 139px;
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
-  }
+    img {
+        margin-top: 139px;
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+    }
 }
 
 .login-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 60px;
-  background-color: $bg-white;
-  box-shadow: $shadow-login;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+    background-color: $bg-white;
+    box-shadow: $shadow-login;
 
-  @include mobile {
-    padding: 30px 20px;
-  }
+    @include mobile {
+        padding: 30px 20px;
+    }
 
-  @include tablet {
-    padding: 40px;
-  }
+    @include tablet {
+        padding: 40px;
+    }
 }
 
 .login-form-container {
-  width: 100%;
-  max-width: 447px;
+    width: 100%;
+    max-width: 447px;
 }
 
 .login-title {
-  @include heading-1;
-  margin-bottom: 10px;
-  color: $text-primary;
+    @include heading-1;
+    margin-bottom: 10px;
+    color: $text-primary;
 }
 
 .login-subtitle {
-  @include body-text;
-  margin-bottom: 60px;
-  color: $text-secondary;
+    @include body-text;
+    margin-bottom: 60px;
+    color: $text-secondary;
 
-  @include mobile {
-    margin-bottom: 40px;
-  }
+    @include mobile {
+        margin-bottom: 40px;
+    }
 }
 
 .login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .form-group {
-  position: relative;
+    position: relative;
 }
 
 .form-input {
-  @include input-base;
-  height: 50px;
-  padding-right: 70px;
+    @include input-base;
+    height: 50px;
+    padding-right: 70px;
 
-  &::placeholder {
-    color: $text-secondary;
-    opacity: 0.6;
-  }
+    &::placeholder {
+        color: $text-secondary;
+        opacity: 0.6;
+    }
 }
 
 .password-toggle {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: $primary-teal;
-  font-family: $font-primary;
-  font-size: $font-size-xs;
-  font-weight: $font-semibold;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  padding: 4px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $primary-teal;
+    font-family: $font-primary;
+    font-size: $font-size-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4px;
 
-  &:hover {
-    color: darken($primary-teal, 10%);
-  }
+    &:hover {
+        color: color.adjust($primary-teal, $lightness: -10%);
+    }
 }
 
 .forgot-password {
-  display: inline-block;
-  color: $primary-teal;
-  font-family: $font-primary;
-  font-size: $font-size-xs;
-  font-weight: $font-semibold;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-top: -8px;
+    display: inline-block;
+    color: $primary-teal;
+    font-family: $font-primary;
+    font-size: $font-size-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: -8px;
 
-  &:hover {
-    color: darken($primary-teal, 10%);
-  }
+    &:hover {
+        color: color.adjust($primary-teal, $lightness: -10%);
+    }
 }
 
 .login-button {
-  @include button-primary;
-  width: 100%;
-  height: 48px;
-  margin-top: 6px;
-  font-size: $font-size-sm;
-  letter-spacing: 0.1em;
+    @include button-primary;
+    width: 100%;
+    height: 48px;
+    margin-top: 6px;
+    font-size: $font-size-sm;
+    letter-spacing: 0.1em;
 
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
 }
 
 .form-error {
-  color: $status-blacklisted;
-  font-size: $font-size-sm;
-  margin-top: 4px;
+    color: $status-blacklisted;
+    font-size: $font-size-sm;
+    margin-top: 4px;
 }

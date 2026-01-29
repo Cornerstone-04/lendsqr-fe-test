@@ -1,193 +1,194 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "sass:color";
 
 .header {
-  height: $header-height;
-  background-color: $bg-white;
-  border-bottom: 1px solid $border-color;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: $z-header;
+    height: $header-height;
+    background-color: $bg-white;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $z-header;
 
-  @include mobile {
-    padding: 0 16px;
-    height: 80px;
-  }
+    @include mobile {
+        padding: 0 16px;
+        height: 80px;
+    }
 }
 
 .header__left {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
 
-  @include mobile {
-    gap: 16px;
-  }
+    @include mobile {
+        gap: 16px;
+    }
 }
 
 .header__menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: $text-primary;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: $text-primary;
 
-  @include mobile {
-    display: block;
-  }
+    @include mobile {
+        display: block;
+    }
 }
 
 .header__logo {
-  flex-shrink: 0;
+    flex-shrink: 0;
 
-  img {
-    height: 30px;
-    width: auto;
+    img {
+        height: 30px;
+        width: auto;
 
-    @include mobile {
-      height: 24px;
+        @include mobile {
+            height: 24px;
+        }
     }
-  }
 }
 
 .header__search {
-  display: flex;
-  align-items: center;
-  max-width: 400px;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
 
-  @include mobile {
-    display: none;
-  }
+    @include mobile {
+        display: none;
+    }
 }
 
 .header__search-input {
-  flex: 1;
-  height: 40px;
-  padding: 0 16px;
-  border: 1px solid $border-light;
-  border-right: none;
-  border-radius: $radius-md 0 0 $radius-md;
-  font-family: $font-primary;
-  font-size: $font-size-sm;
-  background-color: $bg-white;
-  outline: none;
+    flex: 1;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid $border-light;
+    border-right: none;
+    border-radius: $radius-md 0 0 $radius-md;
+    font-family: $font-primary;
+    font-size: $font-size-sm;
+    background-color: $bg-white;
+    outline: none;
 
-  &::placeholder {
-    color: $text-secondary;
-  }
+    &::placeholder {
+        color: $text-secondary;
+    }
 
-  &:focus {
-    border-color: $primary-teal;
-  }
+    &:focus {
+        border-color: $primary-teal;
+    }
 }
 
 .header__search-button {
-  height: 40px;
-  width: 56px;
-  background-color: $primary-teal;
-  border: none;
-  border-radius: 0 $radius-md $radius-md 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+    height: 40px;
+    width: 56px;
+    background-color: $primary-teal;
+    border: none;
+    border-radius: 0 $radius-md $radius-md 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: darken($primary-teal, 5%);
-  }
+    &:hover {
+        background-color: color.adjust($primary-teal, lightness: 5%);
+    }
 
-  svg {
-    color: $bg-white;
-    width: 16px;
-    height: 16px;
-  }
+    svg {
+        color: $bg-white;
+        width: 16px;
+        height: 16px;
+    }
 }
 
 .header__right {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
 
-  @include mobile {
-    gap: 16px;
-  }
+    @include mobile {
+        gap: 16px;
+    }
 }
 
 .header__docs {
-  color: $text-primary;
-  font-size: $font-size-base;
-  font-weight: $font-regular;
-  text-decoration: underline;
-  cursor: pointer;
+    color: $text-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    text-decoration: underline;
+    cursor: pointer;
 
-  @include mobile {
-    display: none;
-  }
+    @include mobile {
+        display: none;
+    }
 }
 
 .header__notifications {
-  position: relative;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
 
-  svg {
-    width: 22px;
-    height: 22px;
-    color: $text-primary;
-  }
+    svg {
+        width: 22px;
+        height: 22px;
+        color: $text-primary;
+    }
 }
 
 .header__user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
 
-  @include mobile {
-    gap: 8px;
-  }
+    @include mobile {
+        gap: 8px;
+    }
 }
 
 .header__user-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: $border-color;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $border-color;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-  @include mobile {
-    width: 36px;
-    height: 36px;
-  }
+    @include mobile {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 .header__user-name {
-  font-size: $font-size-base;
-  font-weight: $font-medium;
-  color: $text-primary;
+    font-size: $font-size-base;
+    font-weight: $font-medium;
+    color: $text-primary;
 
-  @include mobile {
-    display: none;
-  }
+    @include mobile {
+        display: none;
+    }
 }
 
 .header__user-dropdown {
-  color: $primary-teal;
+    color: $primary-teal;
 }
