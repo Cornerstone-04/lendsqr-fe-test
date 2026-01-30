@@ -24,7 +24,7 @@ export const UserDetails = () => {
   useEffect(() => {
     const loadUser = async () => {
       if (!id) return;
-      
+
       try {
         const userData = await getUserById(id);
         setUser(userData || null);
@@ -85,10 +85,7 @@ export const UserDetails = () => {
 
   return (
     <div className="user-details" data-testid="user-details">
-      <button
-        className="user-details__back"
-        onClick={() => navigate("/users")}
-      >
+      <button className="user-details__back" onClick={() => navigate("/users")}>
         <ArrowLeft /> Back to Users
       </button>
 
@@ -222,7 +219,9 @@ export const UserDetails = () => {
                   </div>
                 </div>
                 <div className="user-details__field">
-                  <div className="user-details__label">Sector of Employment</div>
+                  <div className="user-details__label">
+                    Sector of Employment
+                  </div>
                   <div className="user-details__value">
                     {user.sectorOfEmployment}
                   </div>
@@ -303,8 +302,6 @@ export const UserDetails = () => {
                 </div>
               </div>
             </div>
-
-          
           </div>
         </div>
       )}
@@ -312,7 +309,9 @@ export const UserDetails = () => {
       {activeTab !== 0 && (
         <div className="user-details__card">
           <div className="user-details__content">
-            <p style={{ textAlign: "center", padding: "40px", color: "#545f7d" }}>
+            <p
+              style={{ textAlign: "center", padding: "40px", color: "#545f7d" }}
+            >
               This section is coming soon...
             </p>
           </div>
