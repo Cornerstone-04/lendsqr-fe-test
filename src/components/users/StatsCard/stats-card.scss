@@ -1,0 +1,76 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "sass:color";
+
+.stats-card {
+  @include card;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+.stats-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  &--users {
+    background-color: $icon-pink-bg;
+    
+    svg {
+      color: $icon-pink;
+    }
+  }
+  
+  &--active {
+    background-color: $icon-purple-bg;
+    
+    svg {
+      color: $icon-purple;
+    }
+  }
+  
+  &--loans {
+    background-color: $icon-orange-bg;
+    
+    svg {
+      color: $icon-orange;
+    }
+  }
+  
+  &--savings {
+    background-color: $icon-red-bg;
+    
+    svg {
+      color: $icon-red;
+    }
+  }
+}
+
+.stats-card__label {
+  font-size: $font-size-sm;
+  font-weight: $font-medium;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stats-card__value {
+  font-size: $font-size-xl;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}

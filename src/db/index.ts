@@ -8,7 +8,7 @@ export class AppDatabase extends Dexie {
     super("lendsqr-db");
 
     this.version(1).stores({
-      users: "id, username, email, status, organization",
+      users: "id, username, email, status, organization, dateJoined",
     });
   }
 }

@@ -44,14 +44,6 @@ export interface User {
     emailAddress: string;
     relationship: string;
   };
-  
-  // Second Guarantor (optional)
-  guarantor2?: {
-    fullName: string;
-    phoneNumber: string;
-    emailAddress: string;
-    relationship: string;
-  };
 }
 
 export interface UserFilters {

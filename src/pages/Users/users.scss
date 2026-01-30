@@ -1,0 +1,37 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "sass:color";
+
+.users-page {
+  width: 100%;
+}
+
+.users-page__title {
+  font-size: $font-size-xl;
+  font-weight: $font-medium;
+  color: $text-primary;
+  margin-bottom: 40px;
+  
+  @include mobile {
+    font-size: $font-size-lg;
+    margin-bottom: 24px;
+  }
+}
+
+.users-page__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-bottom: 40px;
+  
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+}

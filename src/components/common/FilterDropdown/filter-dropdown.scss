@@ -1,0 +1,110 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "sass:color";
+
+.filter-dropdown__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: transparent;
+    z-index: calc($z-dropdown - 1);
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    background: $bg-white;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-dropdown;
+    padding: 30px;
+    width: 270px;
+    z-index: $z-dropdown;
+
+    @include mobile {
+        left: 16px;
+        right: 16px;
+        width: auto;
+    }
+}
+
+.filter-dropdown__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-dropdown__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-dropdown__label {
+    font-size: $font-size-sm;
+    font-weight: $font-medium;
+    color: $text-secondary;
+}
+
+.filter-dropdown__input,
+.filter-dropdown__select {
+    @include input-base;
+    padding: 12px 14px;
+    font-size: $font-size-sm;
+
+    &::placeholder {
+        color: $text-muted;
+        opacity: 0.5;
+    }
+}
+
+.filter-dropdown__select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23545F7D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.filter-dropdown__date-input {
+    position: relative;
+
+    input[type="date"] {
+        @include input-base;
+        padding: 12px 14px;
+        font-size: $font-size-sm;
+        cursor: pointer;
+
+        &::-webkit-calendar-picker-indicator {
+            position: absolute;
+            right: 14px;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+    }
+}
+
+.filter-dropdown__actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.filter-dropdown__button {
+    @include button-base;
+    flex: 1;
+    padding: 12px 20px;
+    font-size: $font-size-sm;
+    font-weight: $font-semibold;
+    letter-spacing: 0;
+    text-transform: none;
+
+    &--reset {
+        @include button-outline;
+    }
+
+    &--filter {
+        @include button-primary;
+    }
+}
