@@ -21,6 +21,7 @@
 
 .users-table__header {
     background-color: $bg-white;
+    position: relative;
 }
 
 .users-table__header-cell {
@@ -155,8 +156,8 @@
 // Actions Dropdown
 .users-table__actions-dropdown {
     position: absolute;
-    right: 0;
-    top: calc(100% + 5px);
+    right: 10px;
+    top: calc(5px);
     background: $bg-white;
     border: 1px solid $border-color;
     border-radius: $radius-sm;

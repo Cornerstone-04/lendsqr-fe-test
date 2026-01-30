@@ -10,9 +10,9 @@ import {
   UserCheck,
 } from "lucide-react";
 import type { User, UserFilters, UserStatus } from "../../../types/user.types";
-import { updateUserStatus } from "../../../db/users.service";
-import FilterDropdown from "../../common/FilterDropdown/filter-dropdown";
 import "./users-table.scss";
+import FilterDropdown from "../../common/FilterDropdown/filter-dropdown";
+import { updateUserStatus } from "../../../db/users.service";
 
 interface UsersTableProps {
   users: User[];
@@ -33,7 +33,7 @@ const UsersTable: React.FC<UsersTableProps> = ({
 }) => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(100);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showFilter, setShowFilter] = useState(false);
 
@@ -59,7 +59,7 @@ const UsersTable: React.FC<UsersTableProps> = ({
   };
 
   const handleViewDetails = (userId: string) => {
-    navigate(`/dashboard/users/${userId}`);
+    navigate(`/users/${userId}`);
     setActiveDropdown(null);
   };
 
@@ -97,7 +97,8 @@ const UsersTable: React.FC<UsersTableProps> = ({
     return pages;
   };
 
-  const handleHeaderClick = () => {
+  const handleHeaderClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setShowFilter(!showFilter);
   };
 

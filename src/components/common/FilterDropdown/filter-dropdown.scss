@@ -11,8 +11,9 @@
 
 .filter-dropdown {
     position: absolute;
-    top: 60px;
-    left: 30px;
+    top: 50px;
+    left: 0;
+    margin-top: 10px;
     background: $bg-white;
     border: 1px solid $border-color;
     border-radius: $radius-sm;
@@ -21,10 +22,41 @@
     width: 270px;
     z-index: $z-dropdown;
 
+    &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid $border-color;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 31px;
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid $bg-white;
+    }
+
     @include mobile {
-        left: 16px;
-        right: 16px;
-        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100vw - 32px);
+        max-width: 270px;
+
+        &::before,
+        &::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
 
