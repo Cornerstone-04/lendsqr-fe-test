@@ -3,12 +3,12 @@
 @use "sass:color";
 
 .users-table-container {
-    @include card;
     overflow: hidden;
     position: relative;
 }
 
 .users-table {
+    @include card;
     width: 100%;
     border-collapse: collapse;
     font-size: $font-size-sm;
@@ -195,10 +195,11 @@
 
 // Pagination
 .users-table__pagination {
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding-top: 20px;
     border-top: 1px solid $border-color;
     flex-wrap: wrap;
     gap: 16px;
@@ -218,7 +219,8 @@
 }
 
 .users-table__pagination-select {
-    padding: 8px 30px 8px 12px;
+    padding: 8px 12px;
+    width: 80px;
     border: 1px solid rgba($text-primary, 0.2);
     border-radius: $radius-sm;
     background-color: rgba($text-primary, 0.06);
@@ -245,12 +247,11 @@
 }
 
 .users-table__pagination-button {
-    min-width: 28px;
-    height: 28px;
+    min-width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 8px;
     border: none;
     border-radius: $radius-sm;
     background-color: transparent;

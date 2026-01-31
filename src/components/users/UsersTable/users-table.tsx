@@ -34,7 +34,7 @@ export const UsersTable: React.FC<UsersTableProps> = ({
 }) => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(100);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showFilter, setShowFilter] = useState(false);
 
