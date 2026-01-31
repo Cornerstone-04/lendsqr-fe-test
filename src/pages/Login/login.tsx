@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import loginIllustration from "../../assets/images/login-illustration.png";
 import LendsqrLogo from "../../assets/icons/lendsqr-logo.svg";
 import { isAuthenticated } from "../../utils/auth";
+import { toast } from "sonner";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ export const Login = () => {
     localStorage.setItem("user", JSON.stringify(mockUser));
 
     setIsLoading(false);
+    toast.success(`Welcome ${mockUser.name}!`);
     navigate("/users");
   };
 

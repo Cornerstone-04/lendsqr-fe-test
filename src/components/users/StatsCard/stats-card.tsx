@@ -9,7 +9,7 @@ interface StatsCardProps {
   variant: "users" | "active" | "loans" | "savings";
 }
 
-const StatsCard: React.FC<StatsCardProps> = ({
+export const StatsCard: React.FC<StatsCardProps> = ({
   icon: Icon,
   label,
   value,
@@ -26,4 +26,3 @@ const StatsCard: React.FC<StatsCardProps> = ({
   );
 };
 
-export default StatsCard;

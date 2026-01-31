@@ -13,6 +13,7 @@ import type { User, UserFilters, UserStatus } from "../../../types/user.types";
 import "./users-table.scss";
 import FilterDropdown from "../../common/FilterDropdown/filter-dropdown";
 import { updateUserStatus } from "../../../db/users.service";
+import { toast } from "sonner";
 
 interface UsersTableProps {
   users: User[];
@@ -24,7 +25,7 @@ interface UsersTableProps {
 
 const ITEMS_PER_PAGE_OPTIONS = [10, 20, 50, 100];
 
-const UsersTable: React.FC<UsersTableProps> = ({
+export const UsersTable: React.FC<UsersTableProps> = ({
   users,
   loading,
   onUserUpdate,
@@ -63,13 +64,22 @@ const UsersTable: React.FC<UsersTableProps> = ({
     setActiveDropdown(null);
   };
 
-  const handleStatusChange = async (userId: string, newStatus: UserStatus) => {
+  const handleStatusChange = async (
+    userId: string,
+    userName: string,
+    newStatus: UserStatus,
+  ) => {
+    onUserUpdate?.(userId, newStatus);
+    setActiveDropdown(null);
+
     try {
       await updateUserStatus(userId, newStatus);
-      onUserUpdate?.(userId, newStatus);
-      setActiveDropdown(null);
+      setTimeout(() => {
+        toast.success(`${userName} status updated to ${newStatus}.`);
+      }, 1000);
     } catch (error) {
-      console.error("Failed to update user status:", error);
+      toast.error(`Failed to update ${userName}. Please try again.`);
+      console.error(error);
     }
   };
 
@@ -222,7 +232,11 @@ const UsersTable: React.FC<UsersTableProps> = ({
                       <button
                         className="users-table__actions-item"
                         onClick={() =>
-                          handleStatusChange(user.id, "Blacklisted")
+                          handleStatusChange(
+                            user.id,
+                            user.fullName,
+                            "Blacklisted",
+                          )
                         }
                       >
                         <UserX size={16} />
@@ -230,7 +244,9 @@ const UsersTable: React.FC<UsersTableProps> = ({
                       </button>
                       <button
                         className="users-table__actions-item"
-                        onClick={() => handleStatusChange(user.id, "Active")}
+                        onClick={() =>
+                          handleStatusChange(user.id, user.fullName, "Active")
+                        }
                       >
                         <UserCheck size={16} />
                         <span>Activate User</span>
@@ -314,5 +330,3 @@ const UsersTable: React.FC<UsersTableProps> = ({
     </div>
   );
 };
-
-export default UsersTable;
