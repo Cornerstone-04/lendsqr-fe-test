@@ -23,30 +23,15 @@ This implementation fulfills all requirements specified in the assessment:
 
 ### Core Pages Built
 1. ✅ **Login Page** - Authentication with email/password validation
-2. ✅ **Dashboard** - Central navigation hub
-3. ✅ **Users Page** - Table view with 500 records from mock API
+2. ✅ **Users Dashboard** - Central navigation hub
+3. ✅ **Users Dashboard with Filters** - Table view with 500 records from mock API
 4. ✅ **User Details Page** - Comprehensive user information display
-
-### Technical Requirements
-- ✅ **React with TypeScript** - Type-safe component architecture
-- ✅ **SCSS** - Custom styling without UI frameworks
-- ✅ **Mobile Responsive** - Fully responsive across all device sizes
-- ✅ **IndexedDB/LocalStorage** - Persistent user data storage
-- ✅ **Mock API Integration** - Fetches 500 user records
-- ✅ **Pixel-Perfect Design** - Matches Figma design specifications
-
-### Quality Standards
-- ✅ **Code Quality** - Well-structured, clean, and maintainable code
-- ✅ **Best Practices** - Modern React patterns and TypeScript usage
-- ✅ **Unit Testing** - Comprehensive test coverage with Vitest
-- ✅ **GitHub Standards** - Clear commit history and documentation
-- ✅ **Design Fidelity** - 100% accurate representation of Figma design
 
 ## 🛠️ Tech Stack
 
 ### Core Technologies
-- **React 19** - Modern React with latest features
-- **TypeScript 5.6** - Type safety and developer experience
+- **ReactJS** - Modern React with latest features
+- **TypeScript** - Type safety and developer experience
 - **Vite 6** - Fast build tool and dev server
 - **React Router 7** - Client-side routing
 - **Bun** - Fast all-in-one JavaScript runtime and package manager
@@ -63,68 +48,6 @@ This implementation fulfills all requirements specified in the assessment:
 - **Vitest** - Fast unit testing framework
 - **React Testing Library** - Component testing utilities
 - **Fake IndexedDB** - Mocked IndexedDB for testing
-
-### Code Quality
-- **ESLint** - Code linting and quality checks
-- **TypeScript** - Static type checking
-
-## 📁 Project Structure
-
-```
-src/
-├── api/                      # API integration layer
-│   ├── axios.ts             # Axios configuration
-│   └── users.api.ts         # User API endpoints
-├── assets/                   # Static assets
-│   ├── icons/               # SVG icons
-│   └── images/              # Images and illustrations
-├── components/               # React components
-│   ├── common/              # Reusable components
-│   │   ├── FilterDropdown/  # Table filter component
-│   │   └── InfoSection/     # User detail sections
-│   ├── layout/              # Layout components
-│   │   ├── Header/          # App header
-│   │   ├── Sidebar/         # Navigation sidebar
-│   │   └── page-layout.tsx  # Main layout wrapper
-│   └── users/               # User-specific components
-│       ├── GeneralDetails/  # User details tab
-│       ├── ProfileSummary/  # User profile card
-│       ├── StatsCard/       # Statistics cards
-│       ├── UserActions/     # Action buttons
-│       ├── UsersError/      # Error state
-│       └── UsersTable/      # Main users table
-├── db/                      # Database layer
-│   ├── index.ts            # Dexie database setup
-│   ├── users.schema.ts     # User type definitions
-│   ├── users.service.ts    # CRUD operations
-│   └── test/               # Database tests
-├── hooks/                   # Custom React hooks
-│   ├── useFilters.ts       # Filtering logic
-│   ├── useUsers.ts         # User data fetching
-│   ├── useIndexedUsers.ts  # IndexedDB operations
-│   └── tests/              # Hook tests
-├── pages/                   # Page components
-│   ├── Dashboard/          # Dashboard page
-│   ├── Login/              # Login page
-│   ├── Users/              # Users listing page
-│   ├── UserDetails/        # User details page
-│   └── NotFound/           # 404 page
-├── routes/                  # Routing configuration
-│   ├── AppRoutes.tsx       # Route definitions
-│   └── ProtectedRoutes.tsx # Auth guard
-├── styles/                  # Global styles
-│   ├── _variables.scss     # SCSS variables
-│   ├── _mixins.scss        # SCSS mixins
-│   └── global.scss         # Global styles
-├── types/                   # TypeScript types
-│   └── user.types.ts       # User-related types
-├── utils/                   # Utility functions
-│   ├── auth.ts             # Authentication helpers
-│   ├── stats-utils.ts      # Statistics calculations
-│   └── tests/              # Utility tests
-├── App.tsx                  # Root component
-└── main.tsx                # Application entry point
-```
 
 ## 🚦 Getting Started
 
@@ -371,66 +294,7 @@ This project uses **Bun** as the package manager and runtime for several benefit
 - Use SCSS variables and mixins
 - Keep components small and focused
 
-### Naming Conventions
-- **Components**: PascalCase (e.g., `UserTable.tsx`)
-- **Files**: kebab-case (e.g., `user-table.scss`)
-- **Functions**: camelCase (e.g., `getUserById`)
-- **Constants**: UPPER_SNAKE_CASE (e.g., `API_BASE_URL`)
-
-### Git Workflow
-```bash
-# Feature branches
-git checkout -b feature/user-filtering
-
-# Commit messages (conventional commits)
-git commit -m "feat: add user filtering functionality"
-git commit -m "fix: resolve pagination bug"
-git commit -m "docs: update README"
-```
-
-## 📚 Additional Resources
-
-- [React Documentation](https://react.dev)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [Vite Guide](https://vitejs.dev/guide/)
-- [Dexie.js Documentation](https://dexie.org)
-- [SCSS Documentation](https://sass-lang.com/documentation)
-- [Vitest Documentation](https://vitest.dev)
-
-## 👤 Author
-
-**Cornerstone Ephraim**
-- GitHub: [@Cornerstone-04](https://github.com/Cornerstone-04)
-- Portfolio: [https://cornerstone-ephraim-lendsqr-fe-test.vercel.app](https://cornerstone-ephraim-lendsqr-fe-test.vercel.app)
-
-## 🙏 Acknowledgments
-
-- **Lendsqr** for the assessment opportunity
-- **Figma Design** provided by Lendsqr team
-- **Mock API** at api.jsonserver.io
-- **Bun** for blazing-fast development experience
-
-## 📄 License
-
-This project is created for assessment purposes and is not licensed for commercial use.
-
 ---
 
-**Assessment Submission Date**: January 2026
-
-**Time Invested**: [Your estimated hours]
-
-**Highlights**:
-- ✅ All 4 pages implemented
-- ✅ Pixel-perfect design match
-- ✅ Full TypeScript coverage
-- ✅ Comprehensive test suite
-- ✅ Mobile responsive
-- ✅ Production-ready code
-- ⚡ Optimized with Bun for performance
-
-## 📧 Questions?
-
-If you have any questions about this implementation, please reach out via email or create an issue in the repository.
 
 Thank you for reviewing my submission! 🎉
