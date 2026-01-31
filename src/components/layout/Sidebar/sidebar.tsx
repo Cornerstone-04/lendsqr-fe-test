@@ -25,6 +25,7 @@ import {
   FileChartColumnIncreasing,
 } from "lucide-react";
 import "./sidebar.scss";
+import { toast } from "sonner";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -45,6 +46,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     localStorage.removeItem("isAuthenticated");
     localStorage.removeItem("user");
     navigate("/login");
+    toast.success("Logged out successfully.");
   };
 
   const customerItems = [

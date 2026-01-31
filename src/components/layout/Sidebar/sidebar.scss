@@ -139,7 +139,7 @@
     }
 
     .sidebar--collapsed & {
-        right:50%;
+        right: 50%;
         transform: translate(50%, -50%);
         svg {
             transform: rotate(180deg);
@@ -291,8 +291,10 @@
     padding: 20px 30px;
     border-top: 1px solid $border-color;
     transition: padding 0.3s ease;
+    cursor: pointer;
 
     .sidebar__nav-link {
+        cursor: pointer;
         padding-left: 0;
         border: none;
         background-color: transparent;
