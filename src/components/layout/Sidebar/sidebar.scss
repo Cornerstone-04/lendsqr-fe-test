@@ -294,7 +294,8 @@
 
     .sidebar__nav-link {
         padding-left: 0;
-        border-left: none;
+        border: none;
+        background-color: transparent;
     }
 }
 
@@ -302,7 +303,7 @@
     padding: 10px 30px 30px;
     font-size: $font-size-xs;
     color: $text-secondary;
-    text-align: center;
+    text-align: left;
     transition:
         opacity 0.2s ease,
         visibility 0.2s ease;

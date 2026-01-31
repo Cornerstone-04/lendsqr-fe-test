@@ -1,3 +1,4 @@
+import React from "react";
 import type { User } from "../../../types/user.types";
 import { InfoSection } from "../../common/InfoSection/info-section";
 
@@ -49,12 +50,11 @@ export const GeneralDetailsTab = ({ user }: { user: User }) => {
 
   return (
     <div className="user-details__content">
-      {sections.map((section) => (
-        <InfoSection
-          key={section.title}
-          title={section.title}
-          fields={section.fields}
-        />
+      {sections.map((section, index) => (
+        <React.Fragment key={section.title}>
+          <InfoSection title={section.title} fields={section.fields} />
+          {index < sections.length - 1 && <hr className="user-details__section-divider" />}
+        </React.Fragment>
       ))}
     </div>
   );

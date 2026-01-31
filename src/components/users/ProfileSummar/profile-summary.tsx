@@ -27,7 +27,7 @@ export const ProfileSummary = ({
   };
 
   return (
-    <div className="user-details__card">
+    <div className="user-details__card user-details__profile-summary">
       <div className="user-details__profile">
         {/* Avatar Section */}
         <div className="user-details__avatar">
