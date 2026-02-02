@@ -6,7 +6,7 @@
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "types": ["vite/client"],
+    "types": ["vite/client","vitest/global"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -23,6 +23,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    
 
     /* ... rest of your config */
     "baseUrl": ".",
