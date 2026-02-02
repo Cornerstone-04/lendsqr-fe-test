@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { calculateUserStats } from "../stats-utils";
-import type { User } from "../../types/user.types";
+import type { User } from "@/types/user.types";
 
 describe("calculateUserStats", () => {
   const mockUsers = [

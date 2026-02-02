@@ -1,4 +1,4 @@
-import type { User } from "../types/user.types";
+import type { User } from "@/types/user.types";
 
 const parseCurrency = (value: string) =>
   parseFloat(value.replace(/[^0-9.-]+/g, "")) || 0;

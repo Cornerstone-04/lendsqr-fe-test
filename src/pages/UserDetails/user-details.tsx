@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { getUserById, updateUserStatus } from "../../db/users.service";
+import { getUserById, updateUserStatus } from "@/db/users.service";
 import { useParams, useNavigate } from "react-router";
-import type { User } from "../../types/user.types";
-import { ArrowLeft } from "lucide-react";
-import { GeneralDetailsTab } from "../../components/users/GeneralDetails/general-details-tab";
-import { ProfileSummary } from "../../components/users/ProfileSummar/profile-summary";
-import { UserActions } from "../../components/users/UserActions/user-actions";
-import "./user-details.scss";
+import type { User } from "@/types/user.types";
+import {
+  GeneralDetailsTab,
+  ProfileSummary,
+  UserActions,
+} from "@/components/users";
 import { toast } from "sonner";
+import { ArrowLeft } from "lucide-react";
+import "./user-details.scss";
 
 const TABS = [
   "General Details",

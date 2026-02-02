@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { UsersTable } from "./users-table";
 import { MemoryRouter } from "react-router";
 import * as router from "react-router";
-import type { User } from "../../../types/user.types";
+import { describe, it, expect, vi, beforeEach } from "vitest";
+import { UsersTable } from "./users-table";
+import type { User } from "@/types/user.types";
 
 const mockUsers: User[] = [
   {

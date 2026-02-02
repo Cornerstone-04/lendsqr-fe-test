@@ -24,8 +24,8 @@ import {
   MessagesSquare,
   FileChartColumnIncreasing,
 } from "lucide-react";
-import "./sidebar.scss";
 import { toast } from "sonner";
+import "./sidebar.scss";
 
 interface SidebarProps {
   isOpen: boolean;

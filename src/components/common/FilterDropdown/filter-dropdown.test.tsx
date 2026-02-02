@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import FilterDropdown from "./filter-dropdown";
+import { FilterDropdown } from "./filter-dropdown";
 
 describe("FilterDropdown Component", () => {
   const mockProps = {

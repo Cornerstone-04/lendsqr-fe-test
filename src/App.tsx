@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router";
-import { router } from "./routes/AppRoutes";
+import { router } from "@/routes/AppRoutes";
 import { Toaster } from "sonner";
 
 function App() {

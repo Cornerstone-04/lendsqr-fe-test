@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import "./login.scss";
 import { useNavigate } from "react-router";
-import loginIllustration from "../../assets/images/login-illustration.png";
-import LendsqrLogo from "../../assets/icons/lendsqr-logo.svg";
-import { isAuthenticated } from "../../utils/auth";
+import loginIllustration from "@/assets/images/login-illustration.png";
+import LendsqrLogo from "@/assets/icons/lendsqr-logo.svg";
+import { isAuthenticated } from "@/utils/auth";
 import { toast } from "sonner";
+import "./login.scss";
 
 export const Login = () => {
   const navigate = useNavigate();

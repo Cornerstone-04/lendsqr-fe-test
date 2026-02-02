@@ -1,5 +1,5 @@
 import { User as UserIcon, Star } from "lucide-react";
-import type { User } from "../../../types/user.types";
+import type { User } from "@/types/user.types";
 
 interface ProfileSummaryProps {
   user: User;

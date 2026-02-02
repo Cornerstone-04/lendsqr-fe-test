@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { type User, type UserFilters } from "../types/user.types";
+import { type User, type UserFilters } from "@/types/user.types";
 
 interface UseFiltersReturn {
   filteredUsers: User[];
@@ -19,6 +19,7 @@ const initialFilters: UserFilters = {
 };
 
 export const useFilters = (users: User[]): UseFiltersReturn => {
+  "use memo";
   const [filters, setFilters] = useState<UserFilters>(initialFilters);
 
   const filteredUsers = useMemo(() => {
@@ -56,8 +57,7 @@ export const useFilters = (users: User[]): UseFiltersReturn => {
 
     if (filters.date) {
       result = result.filter((user) => {
-        // Assuming dateJoined is in format like "May 15, 2020 10:00 AM"
-        // We'll do a simple includes check
+        
         return user.dateJoined.includes(filters.date!);
       });
     }

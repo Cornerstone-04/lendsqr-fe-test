@@ -1,6 +1,6 @@
 import { Search, Bell, ChevronDown, Menu } from "lucide-react";
+import LendsqrLogo from "@/assets/icons/lendsqr-logo.svg";
 import "./header.scss";
-import LendsqrLogo from "../../../assets/icons/lendsqr-logo.svg";
 
 interface HeaderProps {
   onMenuToggle: () => void;

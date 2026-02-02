@@ -1,7 +1,7 @@
 import { renderHook, act } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { useFilters } from "../useFilters";
-import type { User } from "../../types/user.types";
+import type { User } from "@/types/user.types";
 
 const mockUsers = [
   {

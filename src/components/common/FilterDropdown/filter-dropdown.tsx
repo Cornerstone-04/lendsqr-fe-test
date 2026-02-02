@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { type UserFilters, type UserStatus } from "../../../types/user.types";
+import { type UserFilters, type UserStatus } from "@/types/user.types";
 import "./filter-dropdown.scss";
 
 interface FilterDropdownProps {
@@ -9,7 +9,7 @@ interface FilterDropdownProps {
   organizations: string[];
 }
 
-const FilterDropdown: React.FC<FilterDropdownProps> = ({
+export const FilterDropdown: React.FC<FilterDropdownProps> = ({
   onFilter,
   onReset,
   onClose,
@@ -166,5 +166,3 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
     </>
   );
 };
-
-export default FilterDropdown;

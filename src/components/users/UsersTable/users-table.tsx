@@ -9,11 +9,11 @@ import {
   UserX,
   UserCheck,
 } from "lucide-react";
-import type { User, UserFilters, UserStatus } from "../../../types/user.types";
-import "./users-table.scss";
-import FilterDropdown from "../../common/FilterDropdown/filter-dropdown";
-import { updateUserStatus } from "../../../db/users.service";
+import type { User, UserFilters, UserStatus } from "@/types/user.types";
+import { updateUserStatus } from "@/db/users.service";
 import { toast } from "sonner";
+import { FilterDropdown } from "@/components/common";
+import "./users-table.scss";
 
 interface UsersTableProps {
   users: User[];

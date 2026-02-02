@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { fetchUsers } from "../api/users.api";
-import { getAllUsers, saveUsers, clearUsers } from "../db/users.service";
-import { type User } from "../types/user.types";
+import { fetchUsers } from "@/api/users.api";
+import { getAllUsers, saveUsers, clearUsers } from "@/db/users.service";
+import { type User } from "@/types/user.types";
 
 interface UseUsersReturn {
   users: User[];

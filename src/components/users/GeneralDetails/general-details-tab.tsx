@@ -1,5 +1,5 @@
 import React from "react";
-import type { User } from "../../../types/user.types";
+import type { User } from "@/types/user.types";
 import { InfoSection } from "../../common/InfoSection/info-section";
 
 export const GeneralDetailsTab = ({ user }: { user: User }) => {

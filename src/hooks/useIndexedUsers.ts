@@ -4,8 +4,8 @@ import {
   getUserById,
   saveUsers,
   updateUserStatus as updateUserStatusInDB,
-} from "../db/users.service";
-import { type User } from "../types/user.types";
+} from "@/db/users.service";
+import { type User } from "@/types/user.types";
 
 interface UseIndexedUsersReturn {
   users: User[];

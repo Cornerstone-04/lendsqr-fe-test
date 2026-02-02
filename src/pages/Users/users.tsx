@@ -1,14 +1,11 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Users as UsersIcon, UserCheck, Coins, PiggyBank } from "lucide-react";
-import { useUsers } from "../../hooks/useUsers";
-import { useFilters } from "../../hooks/useFilters";
-import { StatsCard } from "../../components/users/StatsCard/stats-card";
-import { UsersTable } from "../../components/users/UsersTable/users-table";
+import { useFilters, useUsers } from "@/hooks";
+import { calculateUserStats } from "@/utils/stats-utils";
+import { StatsCard, UsersError, UsersTable } from "@/components/users";
 import "./users.scss";
-import { calculateUserStats } from "../../utils/stats-utils";
-import { UsersError } from "../../components/users/UsersError/users-error";
 
-export const Users: React.FC = () => {
+export const Users = () => {
   const { users, loading, error } = useUsers();
   const { filteredUsers, applyFilters, resetFilters } = useFilters(users);
 

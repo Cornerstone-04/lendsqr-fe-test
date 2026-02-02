@@ -1,9 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router";
-
-import { Login, UserDetails, Users } from "../pages";
-import { PageLayout } from "../components/layout";
-import ProtectedRoute from "./ProtectedRoutes";
-import NotFound from "../pages/NotFound/not-found";
+import { Login, NotFound, UserDetails, Users } from "@/pages";
+import { PageLayout } from "@/components/layout";
+import { ProtectedRoute } from "./ProtectedRoutes";
 
 export const router = createBrowserRouter([
   {
